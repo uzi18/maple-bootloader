@@ -176,8 +176,8 @@ void jumpToUser (u32 usrAddr) {
 }
 
 void clearUserRamCode (void) {
-  u32 sp = *(vu32*) USER_CODE_RAM;
-  sp = 0;
+  vu32* sp = USER_CODE_RAM;
+  *sp = 0;
 }
 
 void nvicInit(NVIC_InitTypeDef* NVIC_InitStruct) {
