@@ -178,6 +178,7 @@ void setupFLASH    (void);
 void setupBUTTON   (void);
 bool checkUserCode (u32 usrAddr);
 void jumpToUser    (u32 usrAddr);
+void clearUserRamCode (void);
 
 bool flashWriteWord  (u32 addr, u32 word);
 bool flashErasePage  (u32 addr);

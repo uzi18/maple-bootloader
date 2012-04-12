@@ -175,6 +175,11 @@ void jumpToUser (u32 usrAddr) {
   usrMain();                                /* go! */
 }
 
+void clearUserRamCode (void) {
+  u32 sp = *(vu32*) USER_CODE_RAM;
+  sp = 0;
+}
+
 void nvicInit(NVIC_InitTypeDef* NVIC_InitStruct) {
   u32 tmppriority = 0x00;
   u32 tmpreg      = 0x00;

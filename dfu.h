@@ -116,6 +116,6 @@ u8 dfuGetState(void);
 void dfuSetState(u8);
 bool dfuUploadStarted();
 void dfuFinishUpload();
-
+bool dfuUploadedToFlash();
 
 #endif

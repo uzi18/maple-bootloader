@@ -56,6 +56,9 @@ int main() {
       dfuFinishUpload(); // systemHardReset from DFU once done
     }
   }
+
+  if (dfuUploadedToFlash())
+    clearUserRamCode();
   
   if (checkUserCode(USER_CODE_RAM)) {
     jumpToUser(USER_CODE_RAM);

@@ -56,7 +56,7 @@ void dfuInit(void) {
   dfuAppStatus.bState = dfuIDLE;
   dfuAppStatus.iString = 0x00;          /* all strings must be 0x00 until we make them! */
   userFirmwareLen = 0;
-  thisBlockLen = 0;;
+  thisBlockLen = 0;
   userAppAddr = USER_CODE_RAM; /* default RAM user code location */
   userFlash = FALSE;
   code_copy_lock = WAIT;
@@ -368,5 +368,9 @@ void dfuFinishUpload() {
     }
     /* otherwise do nothing, dfu state machine resets itself */
   }
+}
+
+bool dfuUploadedToFlash() {
+  return (userFlash) && (code_copy_lock == END);
 }
 
